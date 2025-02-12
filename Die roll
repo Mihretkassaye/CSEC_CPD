@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int y, w;
+    cin >> y >> w;
+
+    int max_num = max(y, w);
+    int favorable_outcomes = 6 - max_num + 1;
+
+    // Determine the greatest common divisor (GCD) to simplify the fraction
+    int gcd = __gcd(favorable_outcomes, 6);
+    
+    // Print the simplified fraction
+    cout << favorable_outcomes / gcd << "/" << 6 / gcd << endl;
+
+    return 0;
+}
