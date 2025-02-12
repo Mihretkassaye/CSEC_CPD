@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    int total_rotations = 0;
+    char current_position = 'a';
+
+    for (char c : s) {
+        int distance = abs(c - current_position);
+        total_rotations += min(distance, 26 - distance);
+        current_position = c;
+    }
+
+    cout << total_rotations << endl;
+
+    return 0;
+}
