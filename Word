@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string word;
+    cin >> word;
+
+    int lower_count = 0;
+    int upper_count = 0;
+
+    // Count the number of lowercase and uppercase letters
+    for (char c : word) {
+        if (islower(c)) {
+            ++lower_count;
+        } else if (isupper(c)) {
+            ++upper_count;
+        }
+    }
+
+    // Transform the word based on the counts
+    if (upper_count > lower_count) {
+        for (char &c : word) {
+            c = toupper(c);
+        }
+    } else {
+        for (char &c : word) {
+            c = tolower(c);
+        }
+    }
+
+    // Output the transformed word
+    cout << word << endl;
+
+    return 0;
+}
